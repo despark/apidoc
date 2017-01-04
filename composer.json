@@ -1,0 +1,23 @@
+{
+  "name": "despark/apidoc",
+  "description": "Generate api documentation and use swagger to consume it",
+  "keywords": [
+    "laravel",
+    "documentation",
+    "swagger",
+    "api"
+  ],
+  "type": "package",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Panayot Balkandzhiyski",
+      "email": "panayot@despark.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "laravel/framework": "5.1.*"
+  },
+  "require-dev": {}
+}
