@@ -1,5 +1,5 @@
 # apidoc
-Laravel api documentation generator, based on [Swagger](http://swagger.io/) 
+Laravel 5 api documentation generator, based on [Swagger](http://swagger.io/) 
 
 **apidoc** use just a few lines of code added in controller's methods.  
 
