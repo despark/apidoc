@@ -34,7 +34,7 @@
             if (url && url.length > 1) {
                 url = decodeURIComponent(url[1]);
             } else {
-                url = "{{env('APP_URL')}/api-doc/json";
+                url = "{{env('APP_URL')}}/api-doc/json";
             }
 
             // Pre load translate...
