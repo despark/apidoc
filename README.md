@@ -45,7 +45,7 @@ Method documentation example:
          * @apiErr 403 | Unauthorized access
          * @apiResp 200 | Whatever message is send from backend on sucess
          */
-        public function saveDesign($id, DesignRequest $request){}
+        public function index($id, DesignRequest $request){}
 
 - @apiDesc - A description of the method
 - @apiParam - There is no limit of parameters. Parameters can be required or not required. If **word required** is typed the parameter is marked as **required**. Check the example. 

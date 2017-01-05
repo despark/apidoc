@@ -414,7 +414,7 @@ class ApiDocGenerator extends Command
         $fileDir = storage_path('appDoc');
         \File::deleteDirectory($fileDir);
         \File::makeDirectory($fileDir);
-        \File::put($fileDir.DIRECTORY_SEPARATOR.'resource.json', \GuzzleHttp\json_encode($this->swagger));
+        \File::put($fileDir.DIRECTORY_SEPARATOR.'resource.json', json_encode($this->swagger));
     }
     
     
