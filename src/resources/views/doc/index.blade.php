@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Swagger UI</title>
-    <link rel="icon" type="image/png" href="{{url()}}/apidoc/swagger/images/favicon-32x32.png" sizes="32x32"/>
-    <link rel="icon" type="image/png" href="{{url()}}/apidoc/swagger/images/favicon-16x16.png" sizes="16x16"/>
-    <link href='{{url()}}/apidoc/swagger/css/typography.css' media='screen' rel='stylesheet' type='text/css'/>
-    <link href='{{url()}}/apidoc/swagger/css/reset.css' media='screen' rel='stylesheet' type='text/css'/>
-    <link href='{{url()}}/apidoc/swagger/css/screen.css' media='screen' rel='stylesheet' type='text/css'/>
-    <link href='{{url()}}/apidoc/swagger/css/reset.css' media='print' rel='stylesheet' type='text/css'/>
-    <link href='{{url()}}/apidoc/swagger/css/print.css' media='print' rel='stylesheet' type='text/css'/>
-    <script src='{{url()}}/apidoc/swagger/lib/jquery-1.8.0.min.js' type='text/javascript'></script>
-    <script src='{{url()}}/apidoc/swagger/lib/jquery.slideto.min.js' type='text/javascript'></script>
-    <script src='{{url()}}/apidoc/swagger/lib/jquery.wiggle.min.js' type='text/javascript'></script>
-    <script src='{{url()}}/apidoc/swagger/lib/jquery.ba-bbq.min.js' type='text/javascript'></script>
-    <script src='{{url()}}/apidoc/swagger/lib/handlebars-2.0.0.js' type='text/javascript'></script>
-    <script src='{{url()}}/apidoc/swagger/lib/underscore-min.js' type='text/javascript'></script>
-    <script src='{{url()}}/apidoc/swagger/lib/backbone-min.js' type='text/javascript'></script>
-    <script src='{{url()}}/apidoc/swagger/swagger-ui.js' type='text/javascript'></script>
-    <script src='{{url()}}/apidoc/swagger/lib/highlight.7.3.pack.js' type='text/javascript'></script>
-    <script src='{{url()}}/apidoc/swagger/lib/jsoneditor.min.js' type='text/javascript'></script>
-    <script src='{{url()}}/apidoc/swagger/lib/marked.js' type='text/javascript'></script>
-    <script src='{{url()}}/apidoc/swagger/lib/swagger-oauth.js' type='text/javascript'></script>
+    <link rel="icon" type="image/png" href="{{env('APP_URL')}}/apidoc/swagger/images/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="{{env('APP_URL')}}/apidoc/swagger/images/favicon-16x16.png" sizes="16x16"/>
+    <link href='{{env('APP_URL')}}/apidoc/swagger/css/typography.css' media='screen' rel='stylesheet' type='text/css'/>
+    <link href='{{env('APP_URL')}}/apidoc/swagger/css/reset.css' media='screen' rel='stylesheet' type='text/css'/>
+    <link href='{{env('APP_URL')}}/apidoc/swagger/css/screen.css' media='screen' rel='stylesheet' type='text/css'/>
+    <link href='{{env('APP_URL')}}/apidoc/swagger/css/reset.css' media='print' rel='stylesheet' type='text/css'/>
+    <link href='{{env('APP_URL')}}/apidoc/swagger/css/print.css' media='print' rel='stylesheet' type='text/css'/>
+    <script src='{{env('APP_URL')}}/apidoc/swagger/lib/jquery-1.8.0.min.js' type='text/javascript'></script>
+    <script src='{{env('APP_URL')}}/apidoc/swagger/lib/jquery.slideto.min.js' type='text/javascript'></script>
+    <script src='{{env('APP_URL')}}/apidoc/swagger/lib/jquery.wiggle.min.js' type='text/javascript'></script>
+    <script src='{{env('APP_URL')}}/apidoc/swagger/lib/jquery.ba-bbq.min.js' type='text/javascript'></script>
+    <script src='{{env('APP_URL')}}/apidoc/swagger/lib/handlebars-2.0.0.js' type='text/javascript'></script>
+    <script src='{{env('APP_URL')}}/apidoc/swagger/lib/underscore-min.js' type='text/javascript'></script>
+    <script src='{{env('APP_URL')}}/apidoc/swagger/lib/backbone-min.js' type='text/javascript'></script>
+    <script src='{{env('APP_URL')}}/apidoc/swagger/swagger-ui.js' type='text/javascript'></script>
+    <script src='{{env('APP_URL')}}/apidoc/swagger/lib/highlight.7.3.pack.js' type='text/javascript'></script>
+    <script src='{{env('APP_URL')}}/apidoc/swagger/lib/jsoneditor.min.js' type='text/javascript'></script>
+    <script src='{{env('APP_URL')}}/apidoc/swagger/lib/marked.js' type='text/javascript'></script>
+    <script src='{{env('APP_URL')}}/apidoc/swagger/lib/swagger-oauth.js' type='text/javascript'></script>
 
     <!-- Some basic translations -->
     <!-- <script src='lang/translator.js' type='text/javascript'></script> -->
@@ -34,7 +34,7 @@
             if (url && url.length > 1) {
                 url = decodeURIComponent(url[1]);
             } else {
-                url = "{{url()}}/api-doc/json";
+                url = "{{env('APP_URL')}/api-doc/json";
             }
 
             // Pre load translate...
