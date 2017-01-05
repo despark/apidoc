@@ -38,17 +38,17 @@ Method documentation example:
        
         /**
          * @apiDesc A description of the method
-         * @apiParam string $parameterName required | Description of the parameterName  
+         * @apiParam string $parameterName required in_path | Description of the parameterName  
          * @apiParam array $parameterName | Description of the parameterName
          *
          * @apiErr 422 | Validation errors
          * @apiErr 403 | Unauthorized access
-         * @apiResp 200 | Whatever message is send from backedn on sucess
+         * @apiResp 200 | Whatever message is send from backend on sucess
          */
-        public function saveDesign($newsletterId, DesignRequest $request){}
+        public function saveDesign($id, DesignRequest $request){}
 
 - @apiDesc - A description of the method
-- @apiParam - There is no limit of parameters. Parameters can be required or not required. If word required is typed the parameter is marked as required. Check the example. 
+- @apiParam - There is no limit of parameters. Parameters can be required or not required. If **word required** is typed the parameter is marked as **required**. Check the example. 
 
     Params types:
     - string
@@ -61,6 +61,14 @@ Method documentation example:
 
 - @apiErr can have more than one error messages that are return in response
 - @apiResp can have more than one error messages that are return in response
+- url parameter such id in the example is taken automatically and declared as integer
+  
+You can set how the parameter is send and there are 3 options:
+
+- formData - this is the default option and it is not needed to be mention in the comments
+- in_path - where the parameter value is actually part of the operation's URL. For example, in /items/{itemId}, the path parameter is itemId.
+- in_query - Parameters that are appended to the URL. For example, in /items?id=123, the query parameter is id.
+- more information at [Swagger specification page](http://swagger.io/specification/) 
 
 **NOTICE:**
 Everything after "|" symbol is assumed as a description text. So use just one | symbol on a row. 

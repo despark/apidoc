@@ -15,7 +15,13 @@
       "email": "panayot@despark.com"
     }
   ],
-  "minimum-stability": "dev",
+  "autoload": {
+    "classmap": [],
+    "psr-4": {
+      "Despark\\Apidoc\\": "src/"
+    }
+  },
+  "minimum-stability": "stable",
   "require": {
     "laravel/framework": "5.1.*"
   },
