@@ -12,7 +12,7 @@ use ReflectionClass;
  */
 class ApiDocGenerator extends Command
 {
-    
+
     /**
      * Code example
      * @apiDesc Send a reset link to the given user.
@@ -130,7 +130,7 @@ class ApiDocGenerator extends Command
             ];
         
         $this->swagger['host'] = env('APP_URL');
-        $this->swagger['basePath'] = config('apidoc.apiBasePath');
+        $this->swagger['basePath'] = '/'.trim(config('apidoc.apiBasePath'), '/').'/';
         $this->swagger['tags'] = [];
     }
     

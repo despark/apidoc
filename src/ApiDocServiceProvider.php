@@ -3,6 +3,7 @@
 
 namespace Despark\Apidoc;
 
+use Despark\Apidoc\Commands\ApiDocGenerator;
 use Illuminate\Support\ServiceProvider;
 
 class ApiDocServiceProvider extends ServiceProvider
@@ -41,11 +42,11 @@ class ApiDocServiceProvider extends ServiceProvider
         $this->commands($this->registerCommands());
         
     }
-    
+
     protected function registerCommands()
     {
         return [
-            'Despark\Apidoc\Commands\APiDocGenerator',
+            APiDocGenerator::class,
         ];
     }
 }

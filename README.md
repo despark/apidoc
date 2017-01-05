@@ -39,7 +39,7 @@ Method documentation example:
         /**
          * @apiDesc A description of the method
          * @apiParam string $parameterName required in_path | Description of the parameterName  
-         * @apiParam array $parameterName | Description of the parameterName
+         * @apiParam array $parameterName2 | Description2 of the parameterName
          *
          * @apiErr 422 | Validation errors
          * @apiErr 403 | Unauthorized access
