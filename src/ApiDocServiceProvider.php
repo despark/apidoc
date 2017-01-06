@@ -17,7 +17,7 @@ class ApiDocServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/config/apidoc.php' => config_path('apidoc.php'),
-            __DIR__.'/public/swagger' => public_path('apidoc/swagger'),
+            __DIR__.'/vendors/swagger' => public_path('apidoc/swagger'),
             __DIR__.'/storage/appDoc' => storage_path('appDoc'),
         ]);
         // use the vendor configuration file as fallback

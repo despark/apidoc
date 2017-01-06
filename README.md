@@ -1,7 +1,7 @@
 # apidoc
 Laravel 5 api documentation generator, based on [Swagger](http://swagger.io/) 
 
-**apidoc** use just a few lines of code added in controller's methods.  
+**apidoc** use just a few lines of code added to your controllers methods.  
 
 ##Installation
 Require this package with composer using the following command:
@@ -16,10 +16,10 @@ Then call
 
     php artisan vendor:publish
 
-Now you are ready yo use the generator.
+Now you are ready to use the generator.
 
 ##Usage
-If you go trough all steps mentioned above than the file /yourapp/config/apidoc.php should be generated for you. 
+If you do all steps mentioned above than the file /yourapp/config/apidoc.php should be generated for you. 
 
     <?php
     return [
@@ -29,10 +29,10 @@ If you go trough all steps mentioned above than the file /yourapp/config/apidoc.
         'apiBasePath'    => '/api/v1',
     ];
 
-All those parameters are displayed on swagger api doc page so you can change them whenever you want. 
+All those parameters are displayed on swagger api doc page so you can change them to fit your settings. 
 
 ####Controllers and methods
-Every single method that has been documented in apidoc documentation way and present in laravel's routs.php will be shown in the api documentation.
+Every single method that has been documented in **apidoc** documentation way and present in laravel's routs.php will be parsed and shown in the api documentation.
 Method documentation example:
 
        
@@ -47,23 +47,24 @@ Method documentation example:
          */
         public function index($id, DesignRequest $request){}
 
+**Notice:** Every single "@api" element and description should be on a single row.
 - @apiDesc - A description of the method
-- @apiParam - There is no limit of parameters. Parameters can be required or not required. If **word required** is typed the parameter is marked as **required**. Check the example. 
+- @apiParam - There is no limit of parameters. Parameters can be required or not required. If **word required** is typed the parameter is marked as **required**. Check the example above. 
 
     Params types:
     - string
-    - file
+    - file - uploadable file
     - array
     - bool or boolean (both are available and equal)
     - integer
     - password
     - double 
 
-- @apiErr can have more than one error messages that are return in response
-- @apiResp can have more than one error messages that are return in response
-- url parameter such id in the example is taken automatically and declared as integer
+- @apiErr XXX - can have more than one error messages that are returned in response. XXX is the http status code.
+- @apiResp XXX - the response data of the api call. XXX is the http status code.
+- url parameters (such id in the example), are taken automatically and declared as integer
   
-You can set how the parameter is send and there are 3 options:
+You can set how the parameters are send and there are 3 options:
 
 - formData - this is the default option and it is not needed to be mention in the comments
 - in_path - where the parameter value is actually part of the operation's URL. For example, in /items/{itemId}, the path parameter is itemId.
@@ -71,13 +72,14 @@ You can set how the parameter is send and there are 3 options:
 - more information at [Swagger specification page](http://swagger.io/specification/) 
 
 **NOTICE:**
-Everything after "|" symbol is assumed as a description text. So use just one | symbol on a row. 
+Everything after **"|"** symbol is assumed as a description text. So use just one **"|"** symbol on a row. 
 
 ####Command
-After everything is setup and there are comments in the controllers we can call the command.
+After everything is setup, the controllers are declared in route.php file and there are comments in the controllers we can call the command.
 
-    apidoc:generate
+    php artisan apidoc:generate
 
-That's it. Now you can access your new documentation at http://APP_URL/docs#/
+That's it. Now you can access your new documentation at APP_URL/docs#/
 
-**Notice** APP_URL is used for swagger integration. If it is not set in your .env file, the command will with a message, asking you to set up APP_URL.      
+**Notice** APP_URL is used for swagger integration. If it is not set in your .env file, the command will return a message, asking you to set up APP_URL.      
+**Notice** APP_URL example: http://example.info/       
