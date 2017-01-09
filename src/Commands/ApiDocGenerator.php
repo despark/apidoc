@@ -130,7 +130,7 @@ class ApiDocGenerator extends Command
             ];
 
         $this->swagger['host'] = str_replace(['http://', 'https://'], '', env('APP_URL'));
-        $this->swagger['basePath'] = '/'.trim(config('apidoc.apiBasePath'), '/').'/';
+        $this->swagger['basePath'] = '/'.trim(config('apidoc.apiBasePath'), '/');
         $this->swagger['tags'] = [];
     }
     
