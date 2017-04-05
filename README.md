@@ -3,7 +3,7 @@ Laravel 5 api documentation generator, based on [Swagger](http://swagger.io/)
 
 **apidoc** use just a few lines of code added to your controllers methods.  
 
-##Installation
+## Installation
 Require this package with composer using the following command:
 
     composer require despark/apidoc
@@ -18,7 +18,7 @@ Then call
 
 Now you are ready to use the generator.
 
-##Usage
+## Usage
 If you do all steps mentioned above than the file /yourapp/config/apidoc.php should be generated for you. 
 
     <?php
@@ -27,11 +27,18 @@ If you do all steps mentioned above than the file /yourapp/config/apidoc.php sho
         'apiTitle'       => 'My api',
         'apiDescription' => 'My api',
         'apiBasePath'    => '/api/v1',
+        'authorization' => 'jwt'
     ];
 
 All those parameters are displayed on swagger api doc page so you can change them to fit your settings. 
 
-####Controllers and methods
+#### Authorization
+By default swagger is configured to use JWT authentication via Authorization Header: Bearer.
+If you want standard auth trough query just change the authorization option to null.
+
+For now these are the only authorization options available.  
+
+#### Controllers and methods
 Every single method that has been documented in **apidoc** documentation way and present in laravel's routs.php will be parsed and shown in the api documentation.
 Method documentation example:
 
@@ -74,7 +81,7 @@ You can set how the parameters are send and there are 3 options:
 **NOTICE:**
 Everything after **"|"** symbol is assumed as a description text. So use just one **"|"** symbol on a row. 
 
-####Command
+#### Command
 After everything is setup, the controllers are declared in route.php file and there are comments in the controllers we can call the command.
 
     php artisan apidoc:generate
