@@ -4,4 +4,5 @@ return [
     'apiTitle'       => 'My api',
     'apiDescription' => 'My api',
     'apiBasePath'    => '/api/v1',
+    'authorization'  => 'jwt',
 ];

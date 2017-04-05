@@ -77,6 +77,19 @@
                 showRequestHeaders: false
             });
 
+            @if(config('apidoc.authorization') == 'jwt')
+
+            function addApiKeyAuthorization() {
+                var key = $('#input_apiKey')[0].value;
+                key = 'Bearer ' + key;
+                if (key && key.trim() != "") {
+                    var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization("Authorization", key, "header");
+                    window.swaggerUi.api.clientAuthorizations.add("api_key", apiKeyAuth);
+                    log("added key " + key);
+                }
+            }
+
+            @else
             function addApiKeyAuthorization() {
                 var key = encodeURIComponent($('#input_apiKey')[0].value);
                 if (key && key.trim() != "") {
@@ -86,7 +99,8 @@
                 }
             }
 
-            $('#input_apiKey').change(addApiKeyAuthorization);
+            @endif
+                        $('#input_apiKey').change(addApiKeyAuthorization);
 
             // if you have an apiKey you would like to pre-populate on the page for demonstration purposes...
             /*
